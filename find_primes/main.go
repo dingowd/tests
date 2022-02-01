@@ -78,7 +78,6 @@ func main() {
 	defer cancel()
 	wg := sync.WaitGroup{}
 	for i, s := range ranges {
-		s := s
 		wg.Add(2)
 		go findPrimes(ctx, s, &wg, i, ch)
 		go writePrimesToFile(file, ch, &wg)
